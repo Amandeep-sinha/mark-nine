@@ -26,8 +26,6 @@ var playlist = {
       name: "Falak Tak",
       album: "Tashan"
     }
-
-
   ],
   EDM: [
     {
@@ -45,9 +43,9 @@ var playlist = {
     {
       name: "Mungda",
       album: "Total Dhamal"
-    },
+    }
   ],
-  Metal:[
+  Metal: [
     {
       name: "Crazy train",
       album: "Ozzy"
@@ -63,27 +61,26 @@ var playlist = {
     {
       name: "Walk",
       album: "Pantera"
-    },
+    }
   ]
 };
 
 export default function App() {
-  const [selectedGenre, setGenre] = useState("Rock");
-  function genreClickHandler(genre) {
-    setGenre(genre);
+  const [selectedType, setType] = useState("Rock");
+  function ClickHandler(type) {
+    setType(type);
   }
   return (
     <div className="App">
       <h1> Music Playlist 🎶🎧🎸 </h1>
-      <h3 style={{ fontSize: "smaller", textAlign:"centre"}}>
-        
+      <h3 style={{ fontSize: "smaller", textAlign: "centre" }}>
         Checkout My favourite Songs{" "}
       </h3>
 
       <div>
-        {Object.keys(playlist).map((genre) => (
+        {Object.keys(playlist).map((type) => (
           <button
-            onClick={() => genreClickHandler(genre)}
+            onClick={() => ClickHandler(type)}
             style={{
               cursor: "pointer",
               background: "Black",
@@ -91,27 +88,26 @@ export default function App() {
               padding: "0.5rem  1rem",
               borderRadius: "10px",
               margin: "1rem 0.3rem",
-              color:"white",
-              width:"6rem"
+              color: "white",
+              width: "6rem"
             }}
           >
-            {genre}
+            {type}
           </button>
         ))}
       </div>
-      
+
       <div style={{ textAlign: "left" }}>
         <ul style={{ paddingInlineStart: "0" }}>
-          {playlist[selectedGenre].map((song) => (
+          {playlist[selectedType].map((song) => (
             <li
               key={song.name}
               style={{
-                listStyle:"none",
+                listStyle: "none",
                 padding: "1rem",
-                color:"green",
+                color: "green",
                 width: "70%",
-                margin: "1rem 0rem",
-                
+                margin: "1rem 0rem"
               }}
             >
               {" "}
